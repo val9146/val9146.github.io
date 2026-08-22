@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grok Hub — val9146</title>
+  <meta name="description" content="Personal splash page linking all my Grok apps. Built with Grok." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-elev: #0c0c10;
+      --card: rgba(255, 255, 255, 0.035);
+      --card-hover: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f4f4f7;
+      --muted: #9a9aaa;
+      --accent: #ff6e25;
+      --accent-dim: rgba(255, 110, 37, 0.15);
+      --glow: 0 0 40px rgba(255, 110, 37, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    canvas#stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 8px;
+    }
+
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), #ff9a4d);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--text); }
+
+    .hero {
+      text-align: center;
+      padding: 72px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #fff 20%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 480px;
+      margin: 0 auto 36px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 400;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      box-shadow: var(--glow);
+    }
+    .btn-primary:hover { box-shadow: 0 0 50px rgba(255, 110, 37, 0.28); }
+
+    .btn-ghost {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 0%), rgba(255,110,37,0.08), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(255, 110, 37, 0.25);
+      transform: translateY(-3px);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-dim);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 0 40px; }
+      header { padding-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <span class="brand-mark">G</span>
+        Grok Hub
+      </a>
+      <a class="nav-link" href="https://github.com/val9146/val9146.github.io" target="_blank" rel="noopener">Edit on GitHub</a>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">val9146</div>
+      <h1>All my <span>Grok apps</span><br>in one place.</h1>
+      <p>A free, always-on splash page. Add your own links by editing index.html — hosted on GitHub Pages at zero cost.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://grok.com" target="_blank" rel="noopener">Open Grok</a>
+        <a class="btn btn-ghost" href="https://github.com/val9146/val9146.github.io" target="_blank" rel="noopener">Source</a>
+      </div>
+    </section>
+
+    <p class="section-label">Apps</p>
+    <div class="grid" id="apps">
+      <a class="card" href="https://grok.com" target="_blank" rel="noopener">
+        <div class="card-icon">✦</div>
+        <h3>Grok Chat</h3>
+        <p>The official assistant. Ask anything, upload files, use voice, and stay in sync across web and apps.</p>
+        <span class="card-meta">grok.com →</span>
+      </a>
+
+      <a class="card" href="https://grok.com" target="_blank" rel="noopener">
+        <div class="card-icon">◈</div>
+        <h3>Grok Imagine</h3>
+        <p>Generate images and video from a prompt. Built into Grok — same login, same universe.</p>
+        <span class="card-meta">Imagine →</span>
+      </a>
+
+      <a class="card" href="https://x.com/i/grok" target="_blank" rel="noopener">
+        <div class="card-icon">𝕏</div>
+        <h3>Grok on X</h3>
+        <p>Use Grok inside X for real-time context, posts, and the public conversation.</p>
+        <span class="card-meta">x.com/i/grok →</span>
+      </a>
+
+      <a class="card" href="https://console.x.ai" target="_blank" rel="noopener">
+        <div class="card-icon">{ }</div>
+        <h3>Grok API</h3>
+        <p>Build your own apps on Grok models. Keys, docs, and usage live in the xAI console.</p>
+        <span class="card-meta">console.x.ai →</span>
+      </a>
+
+      <a class="card" href="#" onclick="return false;">
+        <div class="card-icon">+</div>
+        <h3>Your app here</h3>
+        <p>Duplicate this card in index.html. Change the title, description, and href to point at anything you ship.</p>
+        <span class="card-meta">Edit the HTML →</span>
+      </a>
+
+      <a class="card" href="https://github.com/val9146" target="_blank" rel="noopener">
+        <div class="card-icon">⌘</div>
+        <h3>GitHub</h3>
+        <p>Repos, Pages source, and future projects. This hub itself lives in val9146.github.io.</p>
+        <span class="card-meta">github.com/val9146 →</span>
+      </a>
+    </div>
+
+    <footer>
+      <span>Free hosting via GitHub Pages · https://val9146.github.io</span>
+      <span>Built with Grok</span>
+    </footer>
+  </div>
+
+  <script>
+    // Subtle starfield
+    const c = document.getElementById('stars');
+    const ctx = c.getContext('2d');
+    let w, h, stars = [];
+
+    function resize() {
+      w = c.width = innerWidth;
+      h = c.height = innerHeight;
+      stars = Array.from({ length: Math.min(160, Math.floor(w * h / 9000)) }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.2 + 0.2,
+        a: Math.random(),
+        s: Math.random() * 0.008 + 0.002
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) {
+        s.a += s.s;
+        const alpha = 0.15 + 0.55 * (0.5 + 0.5 * Math.sin(s.a * 6));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    addEventListener('resize', resize);
+    draw();
+
+    // Card glow follow
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  </script>
+</body>
+</html>
