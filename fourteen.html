@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Fourteen</title>
+  <meta name="theme-color" content="#0b1016" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1016;
+      --fg: #e9eef4;
+      --card: #131a24;
+      --muted: #1a2330;
+      --muted-fg: #8d9aa8;
+      --primary: #d6dee8;
+      --primary-fg: #0b1016;
+      --border: rgba(233, 238, 244, 0.12);
+      --ring: #d6dee8;
+      --radius: 12px;
+      --radius-card: 28px;
+      --font: "Barlow", "Segoe UI", system-ui, sans-serif;
+      --display: "Barlow Condensed", "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      line-height: 1.5;
+      color-scheme: dark;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px calc(40px + env(safe-area-inset-bottom));
+    }
+    main { width: 100%; max-width: 28rem; }
+    .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .mark {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--primary); color: var(--primary-fg);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--display); font-weight: 600; font-size: 1.125rem;
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .sub {
+      margin: 4px 0 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted-fg);
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      box-shadow: 0 0 0 1px var(--border);
+    }
+    .label {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted-fg);
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .stack { display: grid; gap: 6px; margin-top: 20px; }
+    input[type="date"], input[type="time"], select {
+      height: 48px;
+      width: 100%;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--muted);
+      color: var(--fg);
+      padding: 0 12px;
+      font: 500 1rem var(--font);
+      box-shadow: 0 0 0 1px var(--border);
+      outline: none;
+    }
+    input:focus-visible, select:focus-visible {
+      box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ring);
+    }
+    input::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: 0.7;
+      filter: invert(1);
+    }
+    .rule { height: 1px; background: var(--border); margin: 32px 0; border: 0; }
+    .weekday {
+      margin: 16px 0 0;
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .date { margin: 4px 0 0; color: var(--muted-fg); font-size: 0.9375rem; }
+    .time {
+      margin: 16px 0 0;
+      font-family: var(--display);
+      font-size: clamp(3.5rem, 16vw, 5.5rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      font-variant-numeric: tabular-nums;
+    }
+    .station { margin: 16px 0 0; font-size: 0.9375rem; color: var(--muted-fg); }
+    .hint { margin: 8px 0 0; font-size: 0.75rem; color: var(--muted-fg); }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      margin-top: 24px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--primary);
+      color: var(--primary-fg);
+      font: 500 0.9375rem var(--font);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn:active { transform: scale(0.96); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <div class="mark">14</div>
+      <div>
+        <h1>Fourteen</h1>
+        <p class="sub">Pickup window</p>
+      </div>
+    </div>
+    <section class="card">
+      <p class="label">Check-in</p>
+      <div class="row">
+        <input id="date" type="date" aria-label="Check-in date" />
+        <input id="time" type="time" value="08:00" aria-label="Check-in time" />
+      </div>
+      <label class="stack">
+        <span class="label">Station time</span>
+        <select id="station"></select>
+      </label>
+      <hr class="rule" />
+      <p class="label">You can pick up</p>
+      <p class="weekday" id="weekday">—</p>
+      <p class="date" id="monthDay"></p>
+      <p class="time" id="clock"></p>
+      <p class="station" id="stationLine"></p>
+      <label class="stack">
+        <span class="label">My time zone</span>
+        <select id="mine" aria-label="My time zone"></select>
+        <span class="hint">Starts from this device. Change it if you are somewhere else.</span>
+      </label>
+      <a id="cal" class="btn" href="#" hidden>Add to calendar</a>
+      <p class="hint" id="calHint" hidden>iPhone opens Calendar. Android opens Google Calendar. Tap save.</p>
+      <p class="hint">14 hours before station check-in</p>
+    </section>
+  </main>
+  <script>
+    var ZONES = [
+      { id: "America/New_York", label: "Eastern", hubs: "EWR · IAD · CLE" },
+      { id: "America/Chicago", label: "Central", hubs: "ORD · IAH" },
+      { id: "America/Denver", label: "Mountain", hubs: "DEN" },
+      { id: "America/Phoenix", label: "Arizona", hubs: "PHX" },
+      { id: "America/Los_Angeles", label: "Pacific", hubs: "SFO · LAX" },
+      { id: "America/Anchorage", label: "Alaska", hubs: "ANC" },
+      { id: "Pacific/Honolulu", label: "Hawaii", hubs: "HNL" },
+      { id: "America/Puerto_Rico", label: "Atlantic", hubs: "SJU" },
+      { id: "Pacific/Guam", label: "Guam", hubs: "GUM" },
+      { id: "Europe/London", label: "London", hubs: "LHR" },
+      { id: "Europe/Berlin", label: "Central Europe", hubs: "FRA · MUC" },
+      { id: "Asia/Tokyo", label: "Japan", hubs: "NRT · HND" },
+      { id: "Pacific/Auckland", label: "New Zealand", hubs: "AKL" }
+    ];
+
+    var dateEl = document.getElementById("date");
+    var timeEl = document.getElementById("time");
+    var stationEl = document.getElementById("station");
+    var mineEl = document.getElementById("mine");
+    var weekdayEl = document.getElementById("weekday");
+    var monthDayEl = document.getElementById("monthDay");
+    var clockEl = document.getElementById("clock");
+    var stationLineEl = document.getElementById("stationLine");
+    var calEl = document.getElementById("cal");
+    var calHintEl = document.getElementById("calHint");
+    var lastOpens = null;
+    var lastTitle = "Fourteen pickup";
+
+    function detectedZone() {
+      try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "America/New_York"; }
+      catch (e) { return "America/New_York"; }
+    }
+
+    function isApple() {
+      var ua = navigator.userAgent || "";
+      if (/Android/i.test(ua)) return false;
+      if (/iPad|iPhone|iPod/.test(ua)) return true;
+      if (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) return true;
+      return /Macintosh/.test(ua) && /Safari/.test(ua) && !/Chrome|Chromium|Edg|Firefox/.test(ua);
+    }
+
+    function zoneName(id) {
+      for (var i = 0; i < ZONES.length; i++) if (ZONES[i].id === id) return ZONES[i].label;
+      return id.replace(/_/g, " ").split("/").pop();
+    }
+
+    function fillSelect(el, selected) {
+      var list = ZONES.slice();
+      var known = false;
+      for (var i = 0; i < list.length; i++) if (list[i].id === selected) known = true;
+      if (!known) list.unshift({ id: selected, label: "Your time", hubs: selected.replace(/_/g, " ") });
+      el.innerHTML = "";
+      for (var j = 0; j < list.length; j++) {
+        var opt = document.createElement("option");
+        opt.value = list[j].id;
+        opt.textContent = list[j].label + " — " + list[j].hubs;
+        el.appendChild(opt);
+      }
+      el.value = selected;
+    }
+
+    function zonedCivilToDate(dateStr, timeStr, timeZone) {
+      var ymd = dateStr.split("-").map(Number);
+      var hm = timeStr.split(":").map(Number);
+      var utcGuess = Date.UTC(ymd[0], ymd[1] - 1, ymd[2], hm[0], hm[1], 0);
+      function asInZone(ms) {
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: timeZone,
+          year: "numeric", month: "2-digit", day: "2-digit",
+          hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+        }).formatToParts(new Date(ms));
+        var map = {};
+        for (var i = 0; i < parts.length; i++) if (parts[i].type !== "literal") map[parts[i].type] = parts[i].value;
+        var h = Number(map.hour);
+        if (h === 24) h = 0;
+        return Date.UTC(Number(map.year), Number(map.month) - 1, Number(map.day), h, Number(map.minute), Number(map.second));
+      }
+      var instant = utcGuess - (asInZone(utcGuess) - utcGuess);
+      instant -= asInZone(instant) - utcGuess;
+      return new Date(instant);
+    }
+
+    function fmt(date, tz) {
+      return {
+        weekday: new Intl.DateTimeFormat("en-US", { weekday: "long", timeZone: tz }).format(date),
+        monthDay: new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: tz }).format(date),
+        time: new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: tz }).format(date)
+      };
+    }
+
+    function utcStamp(date) {
+      return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+    }
+
+    function calendarIcs(start, title) {
+      var end = new Date(start.getTime() + 15 * 60 * 1000);
+      return [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Kit//Fourteen//EN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        "UID:fourteen-" + start.getTime() + "@kit.local",
+        "DTSTAMP:" + utcStamp(new Date()),
+        "DTSTART:" + utcStamp(start),
+        "DTEND:" + utcStamp(end),
+        "SUMMARY:" + title,
+        "DESCRIPTION:Pickup window opens — 14 hours before check-in",
+        "BEGIN:VALARM",
+        "ACTION:DISPLAY",
+        "DESCRIPTION:" + title,
+        "TRIGGER:PT0S",
+        "END:VALARM",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+    }
+
+    function googleCalHref(start, title) {
+      var end = new Date(start.getTime() + 15 * 60 * 1000);
+      return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" +
+        encodeURIComponent(title) +
+        "&dates=" + utcStamp(start) + "/" + utcStamp(end) +
+        "&details=" + encodeURIComponent("Pickup window opens — 14 hours before check-in");
+    }
+
+    function icsHref(start, title) {
+      return "data:text/calendar;charset=utf-8," + encodeURIComponent(calendarIcs(start, title));
+    }
+
+    (function init() {
+      var d = new Date();
+      d.setDate(d.getDate() + 1);
+      dateEl.value = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+      var home = detectedZone();
+      var savedMine = null;
+      var savedStation = null;
+      try {
+        savedMine = localStorage.getItem("fourteen-my-zone");
+        savedStation = localStorage.getItem("fourteen-station-zone");
+      } catch (e) {}
+      fillSelect(stationEl, savedStation || "America/New_York");
+      fillSelect(mineEl, savedMine || home);
+    })();
+
+    function render() {
+      var date = dateEl.value;
+      var time = timeEl.value;
+      var station = stationEl.value;
+      var mine = mineEl.value;
+      if (!date || !time) {
+        weekdayEl.textContent = "—";
+        monthDayEl.textContent = "";
+        clockEl.textContent = "";
+        stationLineEl.textContent = "";
+        calEl.hidden = true;
+        calHintEl.hidden = true;
+        lastOpens = null;
+        return;
+      }
+      lastOpens = new Date(zonedCivilToDate(date, time, station).getTime() - 14 * 60 * 60 * 1000);
+      var mineFmt = fmt(lastOpens, mine);
+      var stFmt = fmt(lastOpens, station);
+      weekdayEl.textContent = mineFmt.weekday;
+      monthDayEl.textContent = mineFmt.monthDay;
+      clockEl.textContent = mineFmt.time;
+      lastTitle = "Fourteen pickup " + mineFmt.weekday;
+      if (station !== mine) {
+        var extra = stFmt.monthDay !== mineFmt.monthDay ? " · " + stFmt.weekday : "";
+        stationLineEl.textContent = "Station: " + stFmt.time + " " + zoneName(station) + extra;
+      } else {
+        stationLineEl.textContent = "";
+      }
+      if (isApple()) {
+        calEl.href = icsHref(lastOpens, lastTitle);
+        calEl.removeAttribute("target");
+      } else {
+        calEl.href = googleCalHref(lastOpens, lastTitle);
+        calEl.target = "_blank";
+        calEl.rel = "noopener noreferrer";
+      }
+      calEl.hidden = false;
+      calHintEl.hidden = false;
+    }
+
+    dateEl.addEventListener("input", render);
+    timeEl.addEventListener("input", render);
+    stationEl.addEventListener("change", function () {
+      try { localStorage.setItem("fourteen-station-zone", stationEl.value); } catch (e) {}
+      render();
+    });
+    mineEl.addEventListener("change", function () {
+      try { localStorage.setItem("fourteen-my-zone", mineEl.value); } catch (e) {}
+      render();
+    });
+    render();
+  </script>
+</body>
+</html>
