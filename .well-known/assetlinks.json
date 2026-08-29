@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.appworkstester.uacalculators",
+        "sha256_cert_fingerprints": ["E1:63:CF:4A:B2:BD:7A:B4:1B:4B:D1:90:F5:07:CC:0E:DF:90:27:C4:6C:16:FC:DD:E9:58:4C:B4:2A:02:61:2F"]
+      }
+    }]
