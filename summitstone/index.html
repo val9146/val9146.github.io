@@ -4,7 +4,7 @@
 <meta name="description" content="SummitStone LLC provides residential property rental and management services.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -16,37 +16,43 @@
 <main id="main">
 <section class="hero"><div class="wrap">
 <p class="eyebrow reveal">SummitStone LLC</p>
-<h1 class="reveal">Residential Property<br><span class="gold">Rental &amp; Management</span></h1>
-<p class="lead reveal">SummitStone LLC owns, rents, and manages residential properties, with a focus on safe, well maintained homes and responsive, professional service.</p>
+<h1 class="reveal">Residential Property<br><em class="gold">Rental &amp; Management</em></h1><span class="rule reveal" aria-hidden="true"></span>
+<p class="lead reveal">SummitStone LLC owns, rents, and manages residential properties. Our standard is simple: safe, well maintained homes and attentive, professional service for every resident.</p>
 <div class="cta reveal"><a class="btn gold-btn" href="#portal">Resident Portal</a><a class="btn ghost" href="#contact">Contact Us</a></div>
-</div><div class="hero-glow" aria-hidden="true"></div></section>
+</div></section>
 
 <section id="about" class="block"><div class="wrap grid2">
-<div class="reveal"><p class="eyebrow">About Us</p><h2>Built on a solid foundation</h2></div>
+<div class="reveal"><p class="eyebrow">About Us</p><h2>Built on a solid foundation</h2><span class="rule reveal" aria-hidden="true"></span></div>
 <div class="reveal"><p>SummitStone LLC is a limited liability company that owns, rents, and manages residential properties. We are committed to providing safe, well maintained homes and responsive, professional service to our tenants.</p></div>
 </div></section>
 
 <section id="services" class="block alt"><div class="wrap">
-<p class="eyebrow reveal">Properties &amp; Services</p><h2 class="reveal">What we do</h2>
+<p class="eyebrow reveal">Properties &amp; Services</p><h2 class="reveal">What we do</h2><span class="rule reveal" aria-hidden="true"></span>
 <div class="cards">
-<article class="card reveal"><div class="ico" aria-hidden="true">&#8962;</div><h3>Residential Rentals</h3><p>Homes owned and rented directly by SummitStone LLC.</p></article>
-<article class="card reveal"><div class="ico" aria-hidden="true">&#9874;</div><h3>Property Management</h3><p>Leasing, upkeep, and day-to-day care of our residential properties.</p></article>
-<article class="card reveal"><div class="ico" aria-hidden="true">&#9993;</div><h3>Resident Support</h3><p>Online rent payment, maintenance requests, and direct communication with us.</p></article>
+<article class="card reveal"><span class="pnum">01</span><h3>Residential Rentals</h3><p>Homes owned and rented directly by SummitStone LLC.</p></article>
+<article class="card reveal"><span class="pnum">02</span><h3>Property Management</h3><p>Leasing, upkeep, and the day-to-day care of every home in our portfolio.</p></article>
+<article class="card reveal"><span class="pnum">03</span><h3>Resident Support</h3><p>Online rent payment, maintenance requests, and a direct line to our team.</p></article>
 </div></div></section>
 
 <section id="portal" class="block portal"><div class="wrap">
-<p class="eyebrow reveal">Resident Portal</p><h2 class="reveal">Manage your home online</h2>
+<p class="eyebrow reveal">Resident Portal</p><h2 class="reveal">Manage your home online</h2><span class="rule reveal" aria-hidden="true"></span>
 <p class="reveal muted">Our resident portal is powered by TurboTenant. Sign in with the email address associated with your lease.</p>
 <div class="portal-grid">
-<a class="pcard reveal" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128273;</span><strong>Resident Login</strong><span>Access your account</span></a>
-<a class="pcard reveal" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128179;</span><strong>Pay Rent</strong><span>Pay securely online</span></a>
-<a class="pcard reveal" href="https://renter.turbotenant.com/renters/dashboard/maintenance" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128295;</span><strong>Request Maintenance</strong><span>Submit and track requests</span></a>
+<a class="pcard reveal" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener"><span class="pnum">I</span><strong>Resident Login</strong><span>Access your account</span></a>
+<a class="pcard reveal" href="#pay"><span class="pnum">II</span><strong>Pay Rent</strong><span>TurboTenant or Zelle</span></a>
+<a class="pcard reveal" href="https://renter.turbotenant.com/renters/dashboard/maintenance" target="_blank" rel="noopener"><span class="pnum">III</span><strong>Request Maintenance</strong><span>Submit and track requests</span></a>
 </div>
-<p class="small muted reveal">Links open TurboTenant in a new tab.</p>
+<div id="pay" class="pay">
+<p class="eyebrow reveal">Pay Rent</p><h3 class="reveal">Two ways to pay</h3>
+<div class="pay-grid">
+<div class="paycard reveal"><span class="opt">Option 1</span><h4>Pay through TurboTenant</h4><p>Pay securely online by card or bank transfer in your TurboTenant renter portal.</p><a class="btn gold-btn" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener">Pay with TurboTenant</a></div>
+<div class="paycard reveal zelle"><div><span class="opt">Option 2</span><h4>Pay with Zelle</h4><p>Send payment to SummitStone LLC using Zelle in your banking app:</p><p class="zaddr"><a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a></p><p class="small muted">Or scan the QR code with your banking app.</p></div><img src="assets/zelle-qr.png" alt="Zelle QR code to pay SummitStone LLC" class="qr" width="200" height="200"></div>
+</div></div>
+<p class="small muted reveal">TurboTenant links open in a new tab.</p>
 </div></section>
 
 <section id="contact" class="block alt"><div class="wrap">
-<p class="eyebrow reveal">Contact</p><h2 class="reveal">Get in touch</h2>
+<p class="eyebrow reveal">Contact</p><h2 class="reveal">Get in touch</h2><span class="rule reveal" aria-hidden="true"></span>
 <div class="cards">
 <div class="card reveal"><h3>Email</h3><p><a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a></p></div>
 <div class="card reveal"><h3>Phone</h3><p><a href="tel:+13322961231">(332) 296-1231</a></p></div>

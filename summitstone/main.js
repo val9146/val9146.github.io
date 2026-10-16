@@ -4,4 +4,4 @@ var t=document.querySelector('.topbar');addEventListener('scroll',function(){t&&
 var els=document.querySelectorAll('.reveal');
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-els.forEach(function(e,i){e.style.transitionDelay=(i%4)*80+'ms';io.observe(e)})})();
+els.forEach(function(e,i){e.style.transitionDelay=(i%4)*160+'ms';io.observe(e)})})();
