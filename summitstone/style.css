@@ -112,3 +112,4 @@ nav a.active{color:var(--gold2)}nav a.active::after{width:100%}
 @media (max-width:1100px){.teasers{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){.teasers{grid-template-columns:1fr}.block.first{padding-top:70px}}
 .foot-logo{background:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important}
+.foot-nav{position:static!important;display:flex!important;flex-direction:row!important;background:none!important;padding:0!important;border:0!important}.foot-nav a{margin:0!important}
