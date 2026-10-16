@@ -2,19 +2,62 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SummitStone LLC | Residential Property Rental and Management</title>
 <meta name="description" content="SummitStone LLC provides residential property rental and management services.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"></head>
 <body>
-<header><h1>SummitStone LLC</h1><p>Residential Property Rental and Management</p></header>
-<nav><a href="#about">About</a><a href="#contact">Contact</a><a href="#sms-consent">SMS Consent</a><a href="terms.html">SMS Terms</a><a href="privacy.html">Privacy Policy</a></nav>
-<main>
-<section id="about"><h2>About Us</h2>
-<p>SummitStone LLC is a Wyoming limited liability company that owns, rents, and manages residential properties. We are committed to providing safe, well maintained homes and responsive, professional service to our tenants.</p></section>
-<section id="contact"><h2>Contact</h2>
-<p><strong>Business Address:</strong><br>SummitStone LLC<br>30 N Gould St, Ste R<br>Sheridan, WY 82801</p>
-<p><strong>Email:</strong> <a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a><br>
-<strong>Phone:</strong> <a href="tel:+13322961231">+1 (332) 296-1231</a></p></section>
-<section id="sms-consent"><h2>SMS Consent</h2>
-<p>Tenants may opt in to SummitStone Tenant Notifications by providing their mobile number and checking the SMS consent box in their signed lease, or by giving written consent to SummitStone LLC. By providing your number you agree to receive texts about rent reminders, maintenance scheduling, property notices and replies to your questions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of renting. See our <a href="terms.html">SMS Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</p></section>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar" id="top"><div class="wrap bar">
+<a href="index.html" class="brand" aria-label="SummitStone LLC home"><span class="logo-chip"><img src="assets/logo.png" alt="SummitStone LLC logo"></span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="nav" aria-label="Main"><a href="#about">About</a><a href="#services">Services</a><a href="#portal">Resident Portal</a><a href="#contact">Contact</a><a href="#sms-consent">SMS Consent</a></nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+<p class="eyebrow reveal">Sheridan, Wyoming</p>
+<h1 class="reveal">Residential Property<br><span class="gold">Rental &amp; Management</span></h1>
+<p class="lead reveal">SummitStone LLC owns, rents, and manages residential properties, with a focus on safe, well maintained homes and responsive, professional service.</p>
+<div class="cta reveal"><a class="btn gold-btn" href="#portal">Resident Portal</a><a class="btn ghost" href="#contact">Contact Us</a></div>
+</div><div class="hero-glow" aria-hidden="true"></div></section>
+
+<section id="about" class="block"><div class="wrap grid2">
+<div class="reveal"><p class="eyebrow">About Us</p><h2>Built on a solid foundation</h2></div>
+<div class="reveal"><p>SummitStone LLC is a Wyoming limited liability company that owns, rents, and manages residential properties. We are committed to providing safe, well maintained homes and responsive, professional service to our tenants.</p></div>
+</div></section>
+
+<section id="services" class="block alt"><div class="wrap">
+<p class="eyebrow reveal">Properties &amp; Services</p><h2 class="reveal">What we do</h2>
+<div class="cards">
+<article class="card reveal"><div class="ico" aria-hidden="true">&#8962;</div><h3>Residential Rentals</h3><p>Homes owned and rented directly by SummitStone LLC.</p></article>
+<article class="card reveal"><div class="ico" aria-hidden="true">&#9874;</div><h3>Property Management</h3><p>Leasing, upkeep, and day-to-day care of our residential properties.</p></article>
+<article class="card reveal"><div class="ico" aria-hidden="true">&#9993;</div><h3>Resident Support</h3><p>Online rent payment, maintenance requests, and direct communication with us.</p></article>
+</div></div></section>
+
+<section id="portal" class="block portal"><div class="wrap">
+<p class="eyebrow reveal">Resident Portal</p><h2 class="reveal">Manage your home online</h2>
+<p class="reveal muted">Our resident portal is powered by TurboTenant. Sign in with the email address associated with your lease.</p>
+<div class="portal-grid">
+<a class="pcard reveal" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128273;</span><strong>Resident Login</strong><span>Access your account</span></a>
+<a class="pcard reveal" href="https://renter.turbotenant.com/auth/login" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128179;</span><strong>Pay Rent</strong><span>Pay securely online</span></a>
+<a class="pcard reveal" href="https://renter.turbotenant.com/renters/dashboard/maintenance" target="_blank" rel="noopener"><span class="pico" aria-hidden="true">&#128295;</span><strong>Request Maintenance</strong><span>Submit and track requests</span></a>
+</div>
+<p class="small muted reveal">Links open TurboTenant in a new tab.</p>
+</div></section>
+
+<section id="contact" class="block alt"><div class="wrap">
+<p class="eyebrow reveal">Contact</p><h2 class="reveal">Get in touch</h2>
+<div class="cards">
+<div class="card reveal"><h3>Email</h3><p><a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a></p></div>
+<div class="card reveal"><h3>Phone</h3><p><a href="tel:+13322961231">(332) 296-1231</a></p></div>
+<div class="card reveal"><h3>Business Address</h3><address>SummitStone LLC<br>30 N Gould St, Ste R<br>Sheridan, WY 82801</address></div>
+</div></div></section>
+
+<section id="sms-consent" class="block"><div class="wrap narrow reveal">
+<p class="eyebrow">SMS Consent</p><h2>SMS Consent</h2>
+<p>Tenants may opt in to SummitStone Tenant Notifications by providing their mobile number and checking the SMS consent box in their signed lease, or by giving written consent to SummitStone LLC. By providing your number you agree to receive texts about rent reminders, maintenance scheduling, property notices and replies to your questions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of renting. See our <a href="terms.html">SMS Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+</div></section>
 </main>
-<footer>&copy; 2026 SummitStone LLC. All rights reserved.<br><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">SMS Terms and Conditions</a></footer>
+<footer class="foot"><div class="wrap"><img src="assets/logo.png" alt="" class="foot-logo"><p>&copy; 2026 SummitStone LLC. All rights reserved.</p><p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">SMS Terms and Conditions</a></p></div></footer>
+<script src="main.js"></script>
 </body></html>
