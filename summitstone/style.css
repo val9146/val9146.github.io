@@ -1,0 +1,7 @@
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#222;background:#f6f5f2;line-height:1.6}
+header{background:#2f3e46;color:#fff;padding:40px 20px;text-align:center}
+header h1{margin:0;font-size:2.2em;letter-spacing:1px}header p{margin:8px 0 0;color:#cad2c5}
+nav{background:#354f52;text-align:center;padding:10px}nav a{color:#fff;margin:0 14px;text-decoration:none;font-family:Arial,sans-serif;font-size:.95em}
+main{max-width:820px;margin:0 auto;padding:20px}section{background:#fff;margin:20px 0;padding:24px 28px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+h2{color:#2f3e46;border-bottom:2px solid #84a98c;padding-bottom:6px}a{color:#2f6f5e}
+footer{text-align:center;padding:24px;color:#666;font-size:.9em}
