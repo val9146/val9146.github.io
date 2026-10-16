@@ -23,7 +23,7 @@
 
 <section id="about" class="block"><div class="wrap grid2">
 <div class="reveal"><p class="eyebrow">About Us</p><h2>Built on a solid foundation</h2><span class="rule reveal" aria-hidden="true"></span></div>
-<div class="reveal"><p>SummitStone LLC is a limited liability company that owns, rents, and manages residential properties. We are committed to providing safe, well maintained homes and responsive, professional service to our tenants.</p></div>
+<div class="reveal"><p>SummitStone LLC is a limited liability company that owns, rents, and manages residential properties. We are committed to providing safe, well maintained homes and responsive, professional service to our tenants.</p><p class="about-contact"><span class="opt">Contact</span> <a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a></p></div>
 </div></section>
 
 <section id="services" class="block alt"><div class="wrap">
@@ -57,7 +57,29 @@
 <div class="card reveal"><h3>Email</h3><p><a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a></p></div>
 <div class="card reveal"><h3>Phone</h3><p><a href="tel:+13322961231">(332) 296-1231</a></p></div>
 <div class="card reveal"><h3>Business Address</h3><address>SummitStone LLC<br>30 N Gould St, Ste R<br>Sheridan, WY 82801</address></div>
-</div></div></section>
+</div>
+<div class="form-wrap reveal">
+<div class="form-intro"><p class="eyebrow">Contact Us</p><h3>Send us a message</h3><span class="rule" aria-hidden="true"></span><p class="muted">Tell us how we can help and we will reply by email or phone.</p></div>
+<form id="contact-form" class="cform" action="https://formsubmit.co/ajax/387cb8ccd90eba621fe9650d5a307b72" method="POST" novalidate>
+<input type="hidden" name="_subject" value="SummitStone website inquiry">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+<div class="frow">
+<div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
+<div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+</div>
+<div class="frow">
+<div class="field"><label for="cf-phone">Phone <span class="opt-l">(optional)</span></label><input id="cf-phone" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="cf-topic">Topic</label><select id="cf-topic" name="topic" required><option value="" disabled selected>Select a topic</option><option>General inquiry</option><option>Rental availability</option><option>Current resident</option><option>Maintenance</option><option>Other</option></select></div>
+</div>
+<div class="field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="5" required></textarea></div>
+<p class="ferr" role="alert" aria-live="assertive"></p>
+<button type="submit" class="btn gold-btn">Send Message</button>
+</form>
+<div class="thanks" id="cf-thanks" tabindex="-1" hidden><p class="eyebrow">Message received</p><h3>Thank you</h3><span class="rule" aria-hidden="true"></span><p>Your message has been sent to SummitStone LLC. We will be in touch shortly.</p></div>
+</div>
+</div></section>
 
 <section id="sms-consent" class="block"><div class="wrap narrow reveal">
 <p class="eyebrow">SMS Consent</p><h2>SMS Consent</h2>
