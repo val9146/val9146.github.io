@@ -121,3 +121,5 @@ nav a.active{color:var(--gold2)}nav a.active::after{width:100%}
 .chk.invalid input{border-color:#c98a74}
 .optout{margin-top:10px}.optout p{color:#c8ccd4}.optout p:last-child{margin-bottom:0}
 #sms-optin .fcard{margin-top:28px}
+.sms-promise{border-left:2px solid var(--gold);padding:4px 0 4px 18px;color:#e6e1d6;font-style:italic;font-family:"Cormorant Garamond",serif;font-size:1.2rem}
+.chk[hidden]{display:none}

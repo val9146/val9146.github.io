@@ -16,14 +16,14 @@
 <main id="main">
 <section id="sms-consent" class="block first"><div class="wrap narrow reveal">
 <p class="eyebrow">SMS Consent</p><h2>SMS Consent</h2>
-<p>Tenants may opt in to SummitStone Tenant Notifications by submitting the text message sign-up form below, by checking the optional SMS consent box on our <a href="contact.html">contact form</a>, or by giving written consent to SummitStone LLC by email. By providing your number you agree to receive texts about rent reminders, maintenance scheduling, property notices and replies to your questions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of renting. See our <a href="terms.html">SMS Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+<p>Tenants may opt in to SummitStone Tenant Notifications by submitting the text message form below, or by giving written consent to SummitStone LLC by email. By providing your number you agree to receive texts about rent reminders, maintenance scheduling, property notices and replies to your questions. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of renting. See our <a href="terms.html">SMS Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</p>
 </div></section>
 <section id="sms-optin" class="block"><div class="wrap narrow reveal">
-<p class="eyebrow">Text Message Sign-Up</p><h2>Opt In to Text Messages</h2><span class="rule" aria-hidden="true"></span>
-<p class="muted">Residents may also sign up for SummitStone Tenant Notifications here. Enter your name and mobile number and check the box below.</p>
+<p class="eyebrow">Text Messages</p><h2>Opt In or Opt Out</h2><span class="rule" aria-hidden="true"></span>
+<p class="sms-promise">Our text messages are used only to contact tenants about the property they reside in. We never send marketing or promotional messages.</p>
 <div class="fcard">
 <form id="sms-form" class="cform" action="https://formsubmit.co/ajax/387cb8ccd90eba621fe9650d5a307b72" method="POST" novalidate>
-<input type="hidden" name="_subject" value="SMS opt-in">
+<input type="hidden" name="_subject" value="SMS opt-in/opt-out request">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
 <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
@@ -31,21 +31,21 @@
 <div class="fl"><input id="sf-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="e-sname"><label for="sf-name">Full name</label><p class="emsg" id="e-sname">Please enter your name.</p></div>
 <div class="fl"><input id="sf-phone" name="mobile_phone" type="tel" autocomplete="tel" placeholder=" " required pattern="[0-9()+. \-]{10,}" aria-describedby="e-sphone"><label for="sf-phone">Mobile phone</label><p class="emsg" id="e-sphone">Please enter a valid mobile number.</p></div>
 </div>
-<label class="chk"><input type="checkbox" id="sf-consent" name="sms_consent" value="Yes, agreed to receive text messages"><span>I agree to receive text messages from SummitStone LLC about my tenancy, maintenance, and account. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of service. See our <a href="terms.html">SMS Terms</a> and <a href="privacy.html">Privacy Policy</a>.</span></label>
+<div class="fl sel"><select id="sf-choice" name="request" required aria-describedby="e-schoice"><option value="" selected disabled hidden></option><option>Opt in to text messages</option><option>Opt out of text messages</option></select><label for="sf-choice">I want to</label><p class="emsg" id="e-schoice">Please choose an option.</p></div>
+<label class="chk" id="sf-consent-wrap" hidden><input type="checkbox" id="sf-consent" name="sms_consent" value="Yes, agreed to receive text messages"><span>I agree to receive text messages from SummitStone LLC about my tenancy, maintenance, and account. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of service. See our <a href="terms.html">SMS Terms</a> and <a href="privacy.html">Privacy Policy</a>.</span></label>
 <p class="ferr" role="alert" aria-live="assertive"></p>
-<button type="submit" class="btn gold-btn fsubmit"><span class="btxt">Sign Up for Texts</span><span class="spin" aria-hidden="true"></span></button>
+<button type="submit" class="btn gold-btn fsubmit"><span class="btxt">Submit</span><span class="spin" aria-hidden="true"></span></button>
 </form>
 <div class="thanks" id="sf-thanks" tabindex="-1" hidden>
 <svg viewBox="0 0 48 48" class="tick" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24.5l6 6 12-13"/></svg>
 <p class="eyebrow">Request received</p><h3>Thank you</h3><span class="rule" aria-hidden="true"></span>
-<p>Your text message sign-up has been received by SummitStone LLC. You can reply STOP at any time to opt out.</p>
+<p id="sf-thanks-msg">Your request has been received by SummitStone LLC.</p>
 </div></div>
 </div></section>
 <section id="opt-out" class="block"><div class="wrap narrow reveal">
 <p class="eyebrow">Opt Out</p><h2>How to Opt Out</h2><span class="rule" aria-hidden="true"></span>
 <div class="card optout">
-<p>You can stop text messages from SummitStone LLC at any time. Reply <strong>STOP</strong> to any message (you may also reply <strong>UNSUBSCRIBE</strong>, <strong>CANCEL</strong>, <strong>END</strong> or <strong>QUIT</strong>). You will receive one final message confirming that you have been unsubscribed, and no further messages will be sent. To resubscribe, reply <strong>START</strong>.</p>
-<p>For help, reply <strong>HELP</strong> to any message, email <a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a> or call <a href="tel:+13322961231">(332) 296-1231</a>.</p>
+<p>Reply <strong>STOP</strong> (or UNSUBSCRIBE, CANCEL, END, QUIT) to any message to stop texts. Reply <strong>HELP</strong> for help, or contact <a href="mailto:val.khazin@summitstone-llc.com">val.khazin@summitstone-llc.com</a> / <a href="tel:+13322961231">(332) 296-1231</a>.</p>
 </div>
 </div></section>
 </main>
